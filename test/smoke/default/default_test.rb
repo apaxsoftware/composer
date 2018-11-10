@@ -5,14 +5,12 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
-  end
+node = json('/tmp/node.json')
+
+describe command('composer') do
+  it { should exist }
 end
 
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+describe command("sudo su -c 'composer diagnose' #{node['composer']['keys_user']}") do
+  its('exit_status') { should cmp 0 }
 end
