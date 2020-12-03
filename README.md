@@ -1,6 +1,6 @@
 # composer Cookbook
 
-[![Build Status](https://travis-ci.org/apaxsoftware/composer.svg?branch=master)](https://travis-ci.org/apaxsoftware/composer)
+[![Build Status](https://travis-ci.com/apaxsoftware/composer.svg?branch=master)](https://travis-ci.com/apaxsoftware/composer)
 
 Description
 ===========
