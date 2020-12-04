@@ -43,7 +43,7 @@ ruby_block 'ensure_composer_installed' do
         install_command = "sudo su -c '#{install_command}' #{user} 2>&1"
       end
       if (cmd = shell_out(install_command)).exitstatus != 0
-        raise Chef::Application.fatal!(cmd.stdout)
+        raise cmd.stdout
       end
       shell_out('chown root:root /tmp/composer 2>&1')
       shell_out('mv /tmp/composer /usr/local/bin 2>&1')
